@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# Attempt to implement SPOS algorithm
 class PSO:
     def __init__(self, particles, dimensions, bounds, w, c, K):
         self.w = w                                      # inertial weight

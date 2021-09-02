@@ -101,7 +101,7 @@ def display(df, model, deviation, bounds):
         plots data via plt. Uses PSO by PySwarms
     """
     options = {'c1': 2, 'c2': 2, 'w': 0.9}
-    y0 = (df.at[0, 'population'] - df.at[0, 'confirmed'], 0,  df.at[0, 'confirmed'], 0)
+    y0 = (df.at[0, 'population'] - df.at[0, 'confirmed'], 0,  df.at[0, 'confirmed'],)
     data = np.subtract(df['confirmed'].to_numpy(), np.add(df['recovered'].to_numpy(), df['deaths'].to_numpy()))
     args = {'model': model, 'y0': y0, 'data': data}
 
@@ -158,4 +158,4 @@ def display_custom(df, model, deviation, bounds):
 
 
 # display_custom(df_ukr, seis, mean_absolute_deviation, (np.zeros(6), np.array([1024, 1, 1, 1, 1, 1])))
-display(df_ukr, seir, mean_absolute_deviation, (np.zeros(8), np.array([1024, 1, 1, 1, 1, 1, 1, 1])))
+display(df_ukr, seis, mean_absolute_deviation, (np.zeros(6), np.array([1024,  1, 1, 1, 1, 1])))
